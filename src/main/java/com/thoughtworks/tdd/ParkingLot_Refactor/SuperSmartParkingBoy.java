@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SuperSmartParkingBoy extends ParkingBoy implements ParkingPerson {
+public class SuperSmartParkingBoy extends ParkingBoy  {
 
     public SuperSmartParkingBoy(Integer parkingBoyId ,List<ParkingLot> parkingLots) {
         super(parkingBoyId,parkingLots);
