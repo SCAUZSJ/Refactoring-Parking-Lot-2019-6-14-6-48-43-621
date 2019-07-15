@@ -6,6 +6,7 @@ import com.thoughtworks.tdd.ParkingLot_Refactor.Interface.ParkingPerson;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ParkingBoy implements ParkingPerson {
 
@@ -53,7 +54,7 @@ public class ParkingBoy implements ParkingPerson {
             this.serviceFeedBack =FeedBack.PleaseProvide.getMessage();
             return null;
         }
-        if(!ticket.getValidity()){
+        if(!ticket.getState()){
             this.serviceFeedBack =FeedBack.UnrecognizedTicket.getMessage();
             return null;
         }
@@ -75,10 +76,11 @@ public class ParkingBoy implements ParkingPerson {
 
     @Override
     public ParkingLot chooseParkingLot() {
-        for(ParkingLot parkingLot :parkingLots){
-            if(parkingLot.getCapacity()>parkingLot.getCarList().size()){
-                return parkingLot;
-            }
+        List<ParkingLot> parkingLots = this.parkingLots.stream().filter((pl)->{
+            return pl.getCarList().size()<pl.getCapacity();
+        }).collect(Collectors.toList());
+        if(parkingLots.size()>0){
+            return parkingLots.get(0);
         }
         return null;
     }

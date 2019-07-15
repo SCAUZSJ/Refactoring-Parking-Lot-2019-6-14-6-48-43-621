@@ -166,7 +166,7 @@ public class StoryTest {
         //given
 //        Car maserati = new Car(200);
         Ticket ticket = new Ticket(1);
-        ticket.setValidity(false);
+        ticket.setState(false);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(1,parkingLot);
 

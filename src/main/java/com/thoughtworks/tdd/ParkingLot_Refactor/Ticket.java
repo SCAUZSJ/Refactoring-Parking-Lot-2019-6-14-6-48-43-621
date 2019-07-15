@@ -3,13 +3,13 @@ package com.thoughtworks.tdd.ParkingLot_Refactor;
 public class Ticket {
     private Integer carId;
     private Integer parkingLotId;
-    private boolean validity;//true 为 有效，false 为无效（已使用）
+    private boolean state;//true 为 有效，false 为无效（已使用）
     private String remark;
     private Integer operatorId;
 
     public Ticket(Integer carId) {
         this.carId = carId;
-        this.validity = true;
+        this.state = true;
     }
 
     public Integer getCarId() {
@@ -20,12 +20,12 @@ public class Ticket {
         this.carId = carId;
     }
 
-    public boolean getValidity() {
-        return validity;
+    public boolean getState() {
+        return state;
     }
 
-    public void setValidity(boolean validity) {
-        this.validity = validity;
+    public void setState(boolean state) {
+        this.state = state;
     }
 
     public String getRemark() {
