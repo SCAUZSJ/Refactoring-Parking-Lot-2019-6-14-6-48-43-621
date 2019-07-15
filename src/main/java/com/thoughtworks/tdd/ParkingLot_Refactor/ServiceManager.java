@@ -7,9 +7,6 @@ public class ServiceManager extends ParkingBoy {
 
     private List<ParkingBoy> parkingBoys = new ArrayList<>();
 
-    public ServiceManager(Integer parkingBoyId,List<ParkingBoy> parkingBoys) {
-        this.parkingBoys = parkingBoys;
-    }
 
     public ServiceManager(Integer parkingBoyId, ParkingLot parkingLot, List<ParkingBoy> parkingBoys) {
         super(parkingBoyId,parkingLot);

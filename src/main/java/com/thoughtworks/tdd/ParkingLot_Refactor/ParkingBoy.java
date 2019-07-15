@@ -13,9 +13,6 @@ public class ParkingBoy implements ParkingPerson {
     private List<ParkingLot> parkingLots = new ArrayList<>();
     private String serviceFeedBack;
 
-    public ParkingBoy() {
-
-    }
     public ParkingBoy(Integer parkingBoyId, ParkingLot parkingLot) {
         this.parkingBoyId = parkingBoyId;
         this.parkingLots.add(parkingLot);

@@ -5,9 +5,6 @@ import java.util.Objects;
 public class Car {
     private Integer carId;
 
-    public Car(){
-
-    }
     public Car(Integer carId) {
         this.carId = carId;
     }

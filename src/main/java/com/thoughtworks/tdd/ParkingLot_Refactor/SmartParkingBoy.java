@@ -9,10 +9,6 @@ import java.util.stream.Collectors;
 
 public class SmartParkingBoy extends ParkingBoy implements ParkingPerson {
 
-    public SmartParkingBoy(Integer parkingBoyId , ParkingLot parkingLot) {
-        super(parkingBoyId,parkingLot);
-    }
-
     public SmartParkingBoy(Integer parkingBoyId ,List<ParkingLot> parkingLots) {
         super(parkingBoyId,parkingLots);
     }

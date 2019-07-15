@@ -7,9 +7,6 @@ public class Ticket {
     private String remark;
     private Integer operatorId;
 
-    public Ticket(){
-        this.validity = true;
-    }
     public Ticket(Integer carId) {
         this.carId = carId;
         this.validity = true;
