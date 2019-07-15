@@ -1,8 +1,4 @@
 package com.thoughtworks.tdd.ParkingLot_Refactor.Interface;
-
-
-
-
 import com.thoughtworks.tdd.ParkingLot_Refactor.Car;
 import com.thoughtworks.tdd.ParkingLot_Refactor.ParkingLot;
 import com.thoughtworks.tdd.ParkingLot_Refactor.Ticket;

@@ -1,4 +1,4 @@
-package com.thoughtworks.tdd.Enum;
+package com.thoughtworks.tdd.ParkingLot_Refactor.Enum;
 
 public enum FeedBack {
 

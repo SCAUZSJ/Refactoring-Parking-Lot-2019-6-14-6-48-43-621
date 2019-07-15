@@ -1,7 +1,6 @@
 package com.thoughtworks.tdd.ParkingLot_Refactor;
 
-import com.thoughtworks.tdd.Enum.FeedBack;
-import com.thoughtworks.tdd.ParkingLot_Refactor.Interface.ParkingPerson;
+import com.thoughtworks.tdd.ParkingLot_Refactor.Enum.FeedBack;
 
 import java.util.Comparator;
 import java.util.List;
