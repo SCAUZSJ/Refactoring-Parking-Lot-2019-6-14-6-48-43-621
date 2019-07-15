@@ -24,7 +24,7 @@ public class SmartParkingBoy extends ParkingBoy implements ParkingPerson {
         ParkingLot parkingLot = chooseParkingLot();
 
         if(parkingLot==null){
-            super.setErrorMsg(FeedBack.NotEnoughPosition.getMessage());
+            super.setServiceFeedBack(FeedBack.NotEnoughPosition.getMessage());
         }else{
             ticket = parkingLot.park(car);
             ticket.setOperatorId(this.getParkingBoyId());

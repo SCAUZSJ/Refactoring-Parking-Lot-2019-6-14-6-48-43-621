@@ -44,7 +44,7 @@ public class ServiceManager extends ParkingBoy {
             if(parkingBoy!=null){
                  ticket = parkingBoy.parking(car);
                 if(ticket == null){
-                    super.setErrorMsg(parkingBoy.getErrorMsg());
+                    super.setServiceFeedBack(parkingBoy.getServiceFeedBack());
                 }
             }
 
@@ -59,7 +59,7 @@ public class ServiceManager extends ParkingBoy {
             if(parkingBoy!=null){
                 car = parkingBoy.redeemCar(ticket);
                 if(car == null){
-                    super.setErrorMsg(parkingBoy.getErrorMsg());
+                    super.setServiceFeedBack(parkingBoy.getServiceFeedBack());
                 }
             }
         }

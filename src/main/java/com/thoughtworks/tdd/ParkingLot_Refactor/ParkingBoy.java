@@ -6,13 +6,12 @@ import com.thoughtworks.tdd.ParkingLot_Refactor.Interface.ParkingPerson;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class ParkingBoy implements ParkingPerson {
 
     private Integer parkingBoyId;
     private List<ParkingLot> parkingLots = new ArrayList<>();
-    private String errorMsg;
+    private String serviceFeedBack;
 
     public ParkingBoy() {
 
@@ -44,7 +43,7 @@ public class ParkingBoy implements ParkingPerson {
             ticket = parkingLot.park(car);
         }
         if(ticket == null){
-            this.errorMsg = FeedBack.NotEnoughPosition.getMessage();
+            this.serviceFeedBack = FeedBack.NotEnoughPosition.getMessage();
         }else{
             ticket.setOperatorId(this.parkingBoyId);
         }
@@ -54,11 +53,11 @@ public class ParkingBoy implements ParkingPerson {
 
         System.out.println(ticket);
         if(ticket == null) {
-            this.errorMsg =FeedBack.PleaseProvide.getMessage();
+            this.serviceFeedBack =FeedBack.PleaseProvide.getMessage();
             return null;
         }
         if(!ticket.getValidity()){
-            this.errorMsg =FeedBack.UnrecognizedTicket.getMessage();
+            this.serviceFeedBack =FeedBack.UnrecognizedTicket.getMessage();
             return null;
         }
         Car car = null;
@@ -72,7 +71,7 @@ public class ParkingBoy implements ParkingPerson {
             }
         }
         if(car == null){
-            this.errorMsg =FeedBack.UnrecognizedTicket.getMessage();
+            this.serviceFeedBack =FeedBack.UnrecognizedTicket.getMessage();
         }
         return car;
     }
@@ -88,12 +87,12 @@ public class ParkingBoy implements ParkingPerson {
     }
 
 
-    public String getErrorMsg() {
-        return errorMsg;
+    public String getServiceFeedBack() {
+        return serviceFeedBack;
     }
 
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
+    public void setServiceFeedBack(String serviceFeedBack) {
+        this.serviceFeedBack = serviceFeedBack;
     }
 
 
