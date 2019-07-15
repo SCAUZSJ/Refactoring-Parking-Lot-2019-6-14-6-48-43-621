@@ -49,12 +49,12 @@ public class ServiceManager extends ParkingBoy {
         return ticket;
     }
     //overload
-    public Car redeemCar(Integer parkingBoyId, Ticket ticket) {
+    public Car fetchCar(Integer parkingBoyId, Ticket ticket) {
         Car car = null;
         if(parkingBoyId!=null){
             ParkingBoy parkingBoy = getSpecifyParkingBoy(parkingBoyId);
             if(parkingBoy!=null){
-                car = parkingBoy.redeemCar(ticket);
+                car = parkingBoy.fetchCar(ticket);
                 if(car == null){
                     super.setServiceFeedBack(parkingBoy.getServiceFeedBack());
                 }

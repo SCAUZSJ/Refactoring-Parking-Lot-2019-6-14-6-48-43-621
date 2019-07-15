@@ -37,7 +37,7 @@ public class StoryTest {
 
         //when
         Ticket ticket = parkingBoy.parking(new Car(1));
-        Car car = parkingBoy.redeemCar(ticket);
+        Car car = parkingBoy.fetchCar(ticket);
 
         //then
         Assertions.assertNotNull(car);
@@ -76,7 +76,7 @@ public class StoryTest {
         //when
         Ticket audiTicket=parkingBoy.parking(audi);
         Ticket maseratiTicket = parkingBoy.parking(maserati);
-        Car car = parkingBoy.redeemCar(maseratiTicket);
+        Car car = parkingBoy.fetchCar(maseratiTicket);
 
         //then
         Assertions.assertEquals(maserati,car);
@@ -94,7 +94,7 @@ public class StoryTest {
 
         //when
         Ticket maseratiTicket = parkingBoy.parking(maserati);
-        Car car = parkingBoy.redeemCar(null);
+        Car car = parkingBoy.fetchCar(null);
 
         //then
         Assertions.assertNull(car);
@@ -114,7 +114,7 @@ public class StoryTest {
 
         //when
         Ticket maseratiTicket = parkingBoy.parking(maserati);
-        Car car = parkingBoy.redeemCar(ticket);
+        Car car = parkingBoy.fetchCar(ticket);
 
         //then
         Assertions.assertNull(car);
@@ -132,8 +132,8 @@ public class StoryTest {
 
         //when
         Ticket maseratiTicket = parkingBoy.parking(maserati);
-        Car car = parkingBoy.redeemCar(maseratiTicket);
-        Car car2 = parkingBoy.redeemCar(maseratiTicket);
+        Car car = parkingBoy.fetchCar(maseratiTicket);
+        Car car2 = parkingBoy.fetchCar(maseratiTicket);
 
         //then
         Assertions.assertNull(car2);
@@ -172,7 +172,7 @@ public class StoryTest {
 
         //when
 //        Ticket maseratiTicket = parkingBoy.parking(maserati);
-        parkingBoy.redeemCar(ticket);
+        parkingBoy.fetchCar(ticket);
 
         //then
         Assertions.assertEquals("Unrecognized parking ticket.",parkingBoy.getServiceFeedBack());
@@ -192,7 +192,7 @@ public class StoryTest {
 
         //when
         Ticket maseratiTicket = parkingBoy.parking(maserati);
-        parkingBoy.redeemCar(ticket);
+        parkingBoy.fetchCar(ticket);
 
         //then
         Assertions.assertEquals("Unrecognized parking ticket.",parkingBoy.getServiceFeedBack());
@@ -208,7 +208,7 @@ public class StoryTest {
         ParkingBoy parkingBoy = new ParkingBoy(1,parkingLot);
 
         //when
-        parkingBoy.redeemCar(null);
+        parkingBoy.fetchCar(null);
 
         //then
         Assertions.assertEquals("Please provide your parking ticket.",parkingBoy.getServiceFeedBack());
@@ -318,7 +318,7 @@ public class StoryTest {
         Car car = new Car(1);
         //when
         Ticket ticket = serviceManager.parking(car);
-        Car newCar = serviceManager.redeemCar(ticket);
+        Car newCar = serviceManager.fetchCar(ticket);
         //then
 
         Assertions.assertEquals(car,newCar);
@@ -359,7 +359,7 @@ public class StoryTest {
         Car car = new Car(1);
         //when
         Ticket ticket = serviceManager.parking(car);
-        Car newCar = (Car) serviceManager.redeemCar(1,ticket);//让id为1的boy去取车
+        Car newCar = (Car) serviceManager.fetchCar(1,ticket);//让id为1的boy去取车
         //then
 
         Assertions.assertEquals(car,newCar); //取到之前停的车
@@ -402,7 +402,7 @@ public class StoryTest {
         serviceManager.parking(car);
         Ticket ticket = new Ticket(2);
         ticket.setParkingLotId(1);
-        Car newCar = (Car) serviceManager.redeemCar(1,ticket);//让1号boy去取2车，错误的票
+        Car newCar = (Car) serviceManager.fetchCar(1,ticket);//让1号boy去取2车，错误的票
         //then
 
         Assertions.assertEquals("Unrecognized parking ticket.",serviceManager.getServiceFeedBack()); //取到之前停的车

@@ -10,6 +10,6 @@ import com.thoughtworks.tdd.ParkingLot_Refactor.Ticket;
 public interface ParkingPerson {
 
     Ticket parking(Car car);
-    Car redeemCar(Ticket ticket);
+    Car fetchCar(Ticket ticket);
     ParkingLot chooseParkingLot();
 }
